@@ -7,7 +7,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon server/index.js",
-    "build": "webpack -d --watch"
+    "build": "webpack -d --watch",
+    "seeed": "node server/db/seeed.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
+    "bluebird": "^3.5.2",
+    "fs": "0.0.1-security",
     "babel-cli": "^6.6.5",
     "babel-core": "6.24.1",
     "babel-loader": "7.0.0",
