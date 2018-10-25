@@ -5,7 +5,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      'shoe': 'AV8068'
+      shoe: 'AV8068',
     };
   }
 
@@ -19,56 +19,56 @@ class App extends React.Component {
             <ul id="slider">
               <li className="panel">
                 <div className="shoe">
-                  <div className="image-holder"></div>
-                  <div className="text-holder"></div>
+                  <div className="image-holder" />
+                  <div className="text-holder" />
                 </div>
                 <div className="shoe">
-                  <div className="image-holder"></div>
-                  <div className="text-holder"></div>
+                  <div className="image-holder" />
+                  <div className="text-holder" />
                 </div>
                 <div className="shoe">
-                  <div className="image-holder"></div>
-                  <div className="text-holder"></div>
+                  <div className="image-holder" />
+                  <div className="text-holder" />
                 </div>
                 <div className="shoe">
-                  <div className="image-holder"></div>
-                  <div className="text-holder"></div>
-                </div>
-              </li>
-              <li className="panel">
-                <div className="shoe">
-                  <div className="image-holder"></div>
-                  <div className="text-holder"></div>
-                </div>
-                <div className="shoe">
-                  <div className="image-holder"></div>
-                  <div className="text-holder"></div>
-                </div>
-                <div className="shoe">
-                  <div className="image-holder"></div>
-                  <div className="text-holder"></div>
-                </div>
-                <div className="shoe">
-                  <div className="image-holder"></div>
-                  <div className="text-holder"></div>
+                  <div className="image-holder" />
+                  <div className="text-holder" />
                 </div>
               </li>
               <li className="panel">
                 <div className="shoe">
-                  <div className="image-holder"></div>
-                  <div className="text-holder"></div>
+                  <div className="image-holder" />
+                  <div className="text-holder" />
                 </div>
                 <div className="shoe">
-                  <div className="image-holder"></div>
-                  <div className="text-holder"></div>
+                  <div className="image-holder" />
+                  <div className="text-holder" />
                 </div>
                 <div className="shoe">
-                  <div className="image-holder"></div>
-                  <div className="text-holder"></div>
+                  <div className="image-holder" />
+                  <div className="text-holder" />
                 </div>
                 <div className="shoe">
-                  <div className="image-holder"></div>
-                  <div className="text-holder"></div>
+                  <div className="image-holder" />
+                  <div className="text-holder" />
+                </div>
+              </li>
+              <li className="panel">
+                <div className="shoe">
+                  <div className="image-holder" />
+                  <div className="text-holder" />
+                </div>
+                <div className="shoe">
+                  <div className="image-holder" />
+                  <div className="text-holder" />
+                </div>
+                <div className="shoe">
+                  <div className="image-holder" />
+                  <div className="text-holder" />
+                </div>
+                <div className="shoe">
+                  <div className="image-holder" />
+                  <div className="text-holder" />
                 </div>
               </li>
             </ul>
