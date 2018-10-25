@@ -16,6 +16,7 @@
     "url": "git+https://github.com/WARP-V/similar-products-carousel.git"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "bluebird": "^3.5.2",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",

@@ -194,6 +194,11 @@ li .shoe .image-holder {
 	height: 160px;
 	background: #e2e2e2;
 	vertical-align: middle;
+	overflow: hidden;
+}
+
+li .shoe .image-holder img {
+	max-height: 100%;
 }
 
 li .shoe .text-holder {

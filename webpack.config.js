@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   context: `${__dirname}/client`,
-  entry: './index.js',
+  entry: `./index.jsx`,
   output: {
     path: path.resolve(__dirname, './public'),
     filename: 'bundle.js',
@@ -26,3 +26,6 @@ module.exports = {
     'react/lib/ExecutionEnvironment': true,
   },
 };
+
+
+
