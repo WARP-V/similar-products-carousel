@@ -18,6 +18,6 @@ CREATE TABLE images (
   id SERIAL,
   product_sku VARCHAR(20),
   image_view VARCHAR(20),
-  image_source VARCHAR(20)
+  image_source VARCHAR(150)
 );
 

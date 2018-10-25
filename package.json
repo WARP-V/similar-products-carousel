@@ -23,6 +23,7 @@
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
+    "eslint": "^5.7.0",
     "bluebird": "^3.5.2",
     "fs": "0.0.1-security",
     "babel-cli": "^6.6.5",
