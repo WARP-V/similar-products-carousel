@@ -7,13 +7,17 @@
   "private": true,
   "scripts": {
     "start": "nodemon server/index.js",
-    "build": "webpack -d --watch"
+    "build": "webpack -d --watch",
+    "seeed": "node server/db/seeed.js",
+    "eslnt": "eslint --ignore-path .gitignore . --fix"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WARP-V/similar-products-carousel.git"
   },
   "dependencies": {
+    "bluebird": "^3.5.2",
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "jquery": "^3.3.1",
     "mysql": "^2.16.0",
@@ -24,12 +28,19 @@
   "devDependencies": {
     "babel-cli": "^6.6.5",
     "babel-core": "6.24.1",
+    "babel-eslint": "^8.2.6",
     "babel-loader": "7.0.0",
     "babel-plugin-react": "1.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "6.24.1",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "fs": "0.0.1-security",
     "webpack": "2.6.1"
   }
 }

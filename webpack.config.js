@@ -1,15 +1,13 @@
-var webpack = require('webpack');
-var path = require('path');
+// const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
-  entry: {
-    'client/dist/app': path.resolve(__dirname, 'client/src/index.js'),
-  },
+  context: `${__dirname}/client`,
+  entry: './index.js',
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, './')
+    path: path.resolve(__dirname, './public'),
+    filename: 'bundle.js',
   },
-
   module: {
     rules: [
       {
@@ -17,14 +15,14 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          presets: ['env', 'react', 'stage-0']
-        }
-      }
-    ]
+          presets: ['env', 'react', 'stage-0'],
+        },
+      },
+    ],
   },
   externals: {
     'react/addons': true, // important!!
     'react/lib/ReactContext': true,
-    'react/lib/ExecutionEnvironment': true
-  }
+    'react/lib/ExecutionEnvironment': true,
+  },
 };
