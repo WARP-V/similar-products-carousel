@@ -198,7 +198,8 @@ li .shoe .image-holder {
 }
 
 li .shoe .image-holder img {
-	max-height: 100%;
+
+	max-width: 100%;
 }
 
 li .shoe .text-holder {

@@ -1,11 +1,7 @@
 const express = require('express');
-// const bparser = require('body-parser');
 const path = require('path');
-const Shoe = require('./db/model.js');
+const Shoe = require('./../database/model.js');
 const app = express();
-
-// app.use(bparser.json());
-// app.use(bparser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, './../public')));
 app.use(express.static(path.join(__dirname, './../node_modules')));
@@ -20,7 +16,6 @@ app.get('/similar', (req, res) => {
         if (err) {
           res.status(500).send(err.message);
         } else {
-          console.log(data);
           res.send(data);
         }
       });

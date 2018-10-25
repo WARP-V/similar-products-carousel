@@ -16,7 +16,6 @@ class Shoe {
   }
 
   getTwelveSimilarWithImages (opts, cb) {
-    console.log(opts);
     connection.query('SELECT * FROM shoes INNER JOIN images ON shoes.product_sku = images.product_sku WHERE product_line = ? LIMIT 12', opts, cb);
   }
 }
