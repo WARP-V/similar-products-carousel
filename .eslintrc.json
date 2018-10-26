@@ -3,7 +3,11 @@
   "parser": "babel-eslint",
   "plugins": [
     "react",
-    "jsx-a11y",
-    "import"
-  ]
+    "import",
+    "jsx-a11y"
+  ],
+  "rules": {
+    "react/destructuring-assignment": 0,
+    "no-console": 0
+  }
 }

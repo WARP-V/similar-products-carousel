@@ -9,7 +9,7 @@
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
     "seeed": "node database/seeed.js",
-    "eslnt": "eslint --ignore-path .gitignore . --fix"
+    "eslnt": "eslint --ignore-path .gitignore client/components/** --fix"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "jquery": "^3.3.1",
     "mysql": "^2.16.0",
     "nodemon": "^1.18.4",
+    "prop-types": "^15.6.2",
     "react": "^15.6.1",
     "react-dom": "^15.4.2"
   },

@@ -1,11 +1,15 @@
 
-## Mac OSX ##
+## mac osx ##
 .DS_Store
 
-## NPM ##
+## npm ##
 node_modules/
 package-lock.json
+# eslintrc.json
 
-## Compiled files ##
+## webpack ##
+webpack.config.js
+
+## compiled files ##
 public/bundle.js
 
