@@ -12,7 +12,7 @@ app.get('/similar', (req, res) => {
     if (err1) {
       res.status(500).send(err1.message);
     } else {
-      const opts = data1[0].product_line;
+      const opts = [data1[0].product_line, data1[0].product_cat, data1[0].product_sku];
       Shoe.getTwelveSimilarWithImages(opts, (err2, data2) => {
         if (err2) {
           res.status(500).send(err2.message);

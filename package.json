@@ -8,7 +8,7 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
-    "seeed": "node database/seeed.js",
+    "seed": "node database/seed.js",
     "eslnt": "eslint --ignore-path .gitignore client/components/** --fix"
   },
   "repository": {

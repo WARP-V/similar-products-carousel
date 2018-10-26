@@ -10,6 +10,7 @@ CREATE TABLE shoes (
   product_sku VARCHAR(20),
   price_full SMALLINT UNSIGNED,
   price_sale SMALLINT UNSIGNED,
+  product_cat SMALLINT UNSIGNED,
   product_line VARCHAR(40),
   product_name VARCHAR(60)
 );

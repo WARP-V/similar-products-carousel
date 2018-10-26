@@ -14,7 +14,7 @@ class Shoe {
   }
 
   getTwelveSimilarWithImages(opts, cb) {
-    this.connection.query('SELECT * FROM shoes INNER JOIN images ON shoes.product_sku = images.product_sku WHERE product_line = ? LIMIT 12', opts, cb);
+    this.connection.query('SELECT * FROM shoes INNER JOIN images ON shoes.product_sku = images.product_sku WHERE shoes.product_line = ? OR shoes.product_cat = ? AND shoes.product_sku != ? LIMIT 12', opts, cb);
   }
 }
 
