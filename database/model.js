@@ -1,6 +1,5 @@
 const mysql = require('mysql');
 
-
 class Shoe {
   constructor() {
     this.connection = mysql.createConnection({

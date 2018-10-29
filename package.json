@@ -1,5 +1,9 @@
 {
   "name": "similar-products-carousel",
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true
+  },
   "version": "1.0.0",
   "description": "module for displaying similar products in nike air jordan clone",
   "author": "Will Godfrey <w.gowman.godfrey@gmail.com>",
@@ -9,7 +13,7 @@
     "start": "nodemon server/server.js",
     "build": "webpack -d --watch",
     "seeds": "node database/seeds.js",
-    "eslnt": "eslint --ignore-path .gitignore client/components/** database/** --fix",
+    "eslint": "eslint --ignore-path .gitignore client/components/** database/** --fix",
     "test": "jest --detectOpenHandles"
   },
   "repository": {
@@ -18,6 +22,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-preset-es2015": "^6.24.1",
     "bluebird": "^3.5.2",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
@@ -36,8 +41,10 @@
     "babel-plugin-react": "1.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.5.0",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "6.24.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "eslint": "^5.7.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",

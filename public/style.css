@@ -63,8 +63,8 @@ button.prev {
 	width: 20px;
 	height: 20px;
 	position: absolute;
-	left: calc(50% - 404px - 76px);
-	padding: calc(142px - 40px) 30px calc(142px + 20px);
+	left: calc(50% - 404px - 60px);
+	padding: calc(142px - 30px) 30px calc(142px + 29px) 20px;
 }
 
 i.material-icons.prev {
@@ -81,7 +81,7 @@ button.next {
 	height: 20px;
 	position: absolute;
 	left: calc(50% + 404px);
-	padding: calc(142px - 40px) 30px calc(142px + 20px);
+	padding: calc(142px - 30px) 30px calc(142px + 29px) 20px;
 }
 
 
@@ -123,13 +123,13 @@ button.inviz {
 	}
 
 	button.prev {
-		left: calc(50% - 202px - 76px);
-		padding: calc(284px - 40px) 30px calc(284px + 20px);
+		left: calc(50% - 202px - 60px);
+		padding: calc(284px - 30px) 30px calc(284px + 29px) 20px;
 	}
 
 	button.next {
 		left: calc(50% + 202px);
-		padding: calc(284px - 40px) 30px calc(284px + 20px);
+		padding: calc(284px - 30px) 30px calc(284px + 29px) 20px;
 	}
 
 }
@@ -157,13 +157,13 @@ button.inviz {
 	}
 
 	button.prev {
-		left: calc(50% - 101px - 76px);
-		padding: calc(568px - 40px) 30px calc(568px + 20px);
+		left: calc(50% - 101px - 60px);
+		padding: calc(568px - 30px) 30px calc(568px + 29px) 20px;
 	}
 
 	button.next {
 		left: calc(50% + 101px);
-		padding: calc(568px - 40px) 30px calc(568px + 20px);
+		padding: calc(568px - 30px) 30px calc(568px + 29px) 20px;
 	}
 }
 
