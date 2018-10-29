@@ -5,7 +5,6 @@ import axios from 'axios';
 import Slider from './Slider';
 
 class App extends React.Component {
-  
   constructor() {
     super();
     this.slideTrack = 0;
@@ -24,14 +23,14 @@ class App extends React.Component {
 
   requestImgs() {
     axios.get(`/products-similar?product_sku=${this.state.product_sku}`)
-    .then((res) => {
-      this.setState({
-        products: res.data,
+      .then((res) => {
+        this.setState({
+          products: res.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
   }
 
   slideLeft() {

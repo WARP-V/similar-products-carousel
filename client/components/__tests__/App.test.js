@@ -6,24 +6,27 @@ import App from '../App';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('App component', () => {
-
-  describe('constructor attaches expected properties and methods', () => {
+  
+  describe('shallow render constains the expected DOM elements', () => {
     it('should render', () => {
       const app = shallow(<App />);
       expect(app.exists()).toBe(true);
     });
 
-    it('should have a div rendered', () => {
+    it('should have an inner div rendered', () => {
       const app = shallow(<App />);
-      expect(app.find('div').length).toBeGreaterThan(0);
+      const outerdiv = app.find('div').first();
+      expect(outerdiv.find('div').length).toBeGreaterThan(0);
     });
 
-    it('should have two buttons inside the outermoust div', () => {
+    it('should have two button elements rendered within the outerdiv div', () => {
       const app = shallow(<App />);
-      const div = app.find('div').first();
-      expect(div.find('button').length).toEqual(2);
+      const outerdiv = app.find('div').first();
+      expect(outerdiv.find('button').length).toEqual(2);
     });
+  });
 
+  describe('constructor attaches expected properties and methods', () => {
     it('should mount with a property slideTrack set to 0', () => {
       const app = shallow(<App />).instance();
       expect(app.slideTrack).toEqual(0);
@@ -40,7 +43,7 @@ describe('App component', () => {
       expect(typeof app.switchShoe).toEqual('function');
     });
   });
-  
+
   describe('methods attached to instance function correctly', () => {
     test('slideRight adjusts slideTrack property to +1 at each invocation', () => {
       const app = shallow(<App />).instance();
@@ -67,8 +70,5 @@ describe('App component', () => {
       expect(app.state.product_sku).toEqual('NEWSKU-001');
     });
   });
-
-
-
-})
-
+  
+});
