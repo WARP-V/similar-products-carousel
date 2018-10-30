@@ -11,8 +11,11 @@ CREATE TABLE shoes (
   price_full SMALLINT UNSIGNED,
   price_sale SMALLINT UNSIGNED,
   product_cat SMALLINT UNSIGNED,
+  product_colors SMALLINT UNSIGNED,
   product_line VARCHAR(40),
-  product_name VARCHAR(60)
+  product_name VARCHAR(60),
+  reviews_avg DECIMAL(3,2) UNSIGNED,
+  reviews_cnt SMALLINT UNSIGNED
 );
 
 CREATE TABLE images (
