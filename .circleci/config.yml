@@ -32,7 +32,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: jest --detectOpenHandles
-      - run: eslint --ignore-path .gitignore client/components/** database/** --fix
+      - run: 
+        - command: jest --detectOpenHandles
+      - run: 
+        - command: eslint --ignore-path .gitignore client/components/** database/** --fix
 
 
