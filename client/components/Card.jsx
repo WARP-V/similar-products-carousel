@@ -9,7 +9,21 @@ const Card = props => (
       </div>
       <div className="text-holder">
         <div className="section-1">
-          <span>{`${props.product.product_colors} Color${props.product.product_colors > 1? 's': ''}`}</span>
+          <span className="view1a">{`${props.product.product_colors} Color${props.product.product_colors > 1 ? 's' : ''}`}</span>
+          <span className="view1b">
+            {
+              props.product.reviews_cnt === 0
+                ? `${props.product.product_colors} Color${props.product.product_colors > 1 ? 's' : ''}`
+                : <div>
+                    <i className="material-icons">star_rate</i>
+                    <i className="material-icons">star_rate</i>
+                    <i className="material-icons">star_rate</i>
+                    <i className="material-icons">star_rate</i>
+                    <i className="material-icons">star_rate</i>
+                    <text>{`(${props.product.reviews_cnt})`}</text>
+                  </div>
+            }
+          </span>
         </div>
         <div className="section-2">
           <span className="product">{ props.product.product_name }</span>

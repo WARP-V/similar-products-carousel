@@ -28,7 +28,8 @@ const seedTables = () => {
     const prodLine = prodLines[i % prodLines.length];
     const prodName = 'Best Shoe Ever';
     const revsAvg = Math.random() * 3 + 2;
-    const revsCnt = Math.floor(Math.random() * 80);
+    let revsCnt = Math.floor(Math.random() * 80 - 40);
+    revsCnt = revsCnt < 0 ? 0 : revsCnt;
 
     seeds.push(connection.queryAsync(
       'INSERT INTO shoes (product_sku, price_full, price_sale, product_cat, product_colors, product_line, product_name, reviews_avg, reviews_cnt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
