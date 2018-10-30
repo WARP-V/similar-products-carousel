@@ -47,13 +47,17 @@ Slider.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
-      product_sku: PropTypes.string,
-      price_full: PropTypes.number,
+      product_sku: PropTypes.string.isRequired,
+      price_full: PropTypes.number.isRequired,
       price_sale: PropTypes.number,
-      product_line: PropTypes.string,
-      product_name: PropTypes.string,
-      image_source: PropTypes.string,
-      image_view: PropTypes.string,
+      product_line: PropTypes.string.isRequired,
+      product_cat: PropTypes.number.isRequired,
+      product_colors: PropTypes.number.isRequired,
+      product_name: PropTypes.string.isRequired,
+      image_source: PropTypes.string.isRequired,
+      image_view: PropTypes.string.isRequired,
+      reviews_avg: PropTypes.number.isRequired,
+      reviews_cnt: PropTypes.number.isRequired,
     }),
   ).isRequired,
 };

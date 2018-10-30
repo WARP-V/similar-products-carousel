@@ -24,7 +24,7 @@ const seedTables = () => {
     const priceSale = Math.random() > 0.5 ? priceFull - Math.random() * 80 : null;
     const prodCat = Math.floor(Math.random() * 5);
     let prodCols = Math.floor(Math.random() * 10 - 5);
-    prodCols = prodCols < 0 ? 0 : prodCols;
+    prodCols = prodCols < 1 ? 1 : prodCols;
     const prodLine = prodLines[i % prodLines.length];
     const prodName = 'Best Shoe Ever';
     const revsAvg = Math.random() * 3 + 2;
