@@ -16,13 +16,13 @@ const Card = props => (
           <span>{ props.product.product_line }</span>
           {
             props.product.price_sale !== null
-            ? (
-              <div className="test">
-                <span className="price slashed">{ `$${props.product.price_full}` }</span>
-                <span className="price">{ `$${props.product.price_sale}` }</span>
-              </div>
-            )
-            : <span className="price">{ `$${props.product.price_full}` }</span>
+              ? (
+                <div className="test">
+                  <span className="price slashed">{ `$${props.product.price_full}` }</span>
+                  <span className="price">{ `$${props.product.price_sale}` }</span>
+                </div>
+              )
+              : <span className="price">{ `$${props.product.price_full}` }</span>
           }
         </div>
       </div>

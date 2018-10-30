@@ -6,10 +6,9 @@ import Card from '../Card';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Card component', () => {
-  
   describe('shallow render constains the expected DOM elements', () => {
     let props;
-    let sliderInstance;
+    let cardInstance;
 
     const createCard = () => {
       if (!cardInstance) {
@@ -24,7 +23,7 @@ describe('Card component', () => {
       props = {
         product: {
           id: '',
-          product_sku:'',
+          product_sku: '',
           price_full: 999,
           price_sale: null,
           product_line: '',
@@ -40,6 +39,5 @@ describe('Card component', () => {
       const card = createCard();
       expect(card.exists()).toBe(true);
     });
-
   });
 });

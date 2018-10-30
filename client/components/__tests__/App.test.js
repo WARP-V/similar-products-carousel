@@ -6,7 +6,6 @@ import App from '../App';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('App component', () => {
-  
   describe('shallow render constains the expected DOM elements', () => {
     it('should render', () => {
       const app = shallow(<App />);
@@ -70,5 +69,4 @@ describe('App component', () => {
       expect(app.state.product_sku).toEqual('NEWSKU-001');
     });
   });
-  
 });

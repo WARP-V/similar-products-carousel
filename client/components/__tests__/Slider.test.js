@@ -6,7 +6,6 @@ import Slider from '../Slider';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Slider component', () => {
-  
   describe('shallow render constains the expected DOM elements', () => {
     let props;
     let sliderInstance;
@@ -43,5 +42,4 @@ describe('Slider component', () => {
       expect(outerdiv.find('li').length).toEqual(3);
     });
   });
-
 });
