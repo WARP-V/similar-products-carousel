@@ -5,11 +5,15 @@
 ## npm ##
 node_modules/
 package-lock.json
-# eslintrc.json
 
 ## webpack ##
 webpack.config.js
 
 ## compiled files ##
 public/bundle.js
+
+## jest output ##
+coverage/
+
+
 

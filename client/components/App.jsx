@@ -22,7 +22,7 @@ class App extends React.Component {
   }
 
   requestImgs() {
-    axios.get(`/similar?product_sku=${this.state.product_sku}`)
+    axios.get(`/products-similar?product_sku=${this.state.product_sku}`)
       .then((res) => {
         this.setState({
           products: res.data,
@@ -52,14 +52,13 @@ class App extends React.Component {
   }
 
   switchShoe(sku) {
-    this.requestImgs();
     this.setState({
       product_sku: sku,
     });
+    this.requestImgs();
   }
 
   render() {
-    console.log('rendering')
     return (
       <div id="carousel">
         <h1>YOU MAY ALSO LIKE</h1>
