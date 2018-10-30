@@ -22,13 +22,18 @@ const seedTables = () => {
   prodSkus.forEach((prodSku, i) => {
     const priceFull = Math.random() * 200 + 100;
     const priceSale = Math.random() > 0.5 ? priceFull - Math.random() * 80 : null;
-    const prodCat = Math.floor(Math.random() * 10);
+    const prodCat = Math.floor(Math.random() * 5);
+    let prodCols = Math.floor(Math.random() * 10 - 5);
+    prodCols = prodCols < 1 ? 1 : prodCols;
     const prodLine = prodLines[i % prodLines.length];
     const prodName = 'Best Shoe Ever';
+    const revsAvg = Math.random() * 3 + 2;
+    let revsCnt = Math.floor(Math.random() * 80 - 40);
+    revsCnt = revsCnt < 0 ? 0 : revsCnt;
 
     seeds.push(connection.queryAsync(
-      'INSERT INTO shoes (product_sku, price_full, price_sale, product_cat, product_line, product_name) VALUES (?, ?, ?, ?, ?, ?)',
-      [prodSku, priceFull, priceSale, prodCat, prodLine, prodName],
+      'INSERT INTO shoes (product_sku, price_full, price_sale, product_cat, product_colors, product_line, product_name, reviews_avg, reviews_cnt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      [prodSku, priceFull, priceSale, prodCat, prodCols, prodLine, prodName, revsAvg, revsCnt],
     ));
 
     const imgSrc = imgSrcs[i % imgSrcs.length];

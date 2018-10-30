@@ -37,7 +37,7 @@ class App extends React.Component {
   }
 
   requestImgs() {
-    axios.get(`/products-similar?product_sku=${this.state.product_sku}`)
+    axios.get(`/${this.state.product_sku}/similar`)
       .then((res) => {
         this.setState({
           products: res.data,
