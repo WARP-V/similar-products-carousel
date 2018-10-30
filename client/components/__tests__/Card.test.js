@@ -65,6 +65,5 @@ describe('Card component', () => {
       const card = createCard();
       expect(card.find('.view-1b').find('i').length).toEqual(5);
     });
-
   });
 });

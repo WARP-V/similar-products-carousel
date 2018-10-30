@@ -13,7 +13,7 @@
     "start": "nodemon server/server.js",
     "build": "webpack -d --watch",
     "seeds": "node database/seeds.js",
-    "eslint": "eslint --ignore-path .gitignore client/components/** database/** --fix",
+    "lint": "eslint --ignore-path .gitignore client/components/** database/** --fix",
     "test": "jest --detectOpenHandles"
   },
   "repository": {

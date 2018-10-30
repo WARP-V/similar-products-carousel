@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Card = props => (
   <div className="shoe">
-    <button type="button" onClick={() => { props.handleClick(props.product.product_sku) }}>
+    <button type="button" onClick={() => { props.handleClick(props.product.product_sku); }}>
       <div className="image-holder">
         <img src={props.product.image_source} alt="" />
       </div>
