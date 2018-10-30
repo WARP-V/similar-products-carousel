@@ -33,8 +33,10 @@ jobs:
         
       # run tests!
       - run: 
-        - command: jest --detectOpenHandles
+        - name: test
+        - command: npm run test
       - run: 
-        - command: eslint --ignore-path .gitignore client/components/** database/** --fix
+        - name: eslint
+        - command: npm run eslint
 
 
