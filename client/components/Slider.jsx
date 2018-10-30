@@ -46,20 +46,9 @@ Slider.propTypes = {
   handleClick: PropTypes.func.isRequired,
   products: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number,
-      product_sku: PropTypes.string.isRequired,
-      price_full: PropTypes.number.isRequired,
-      price_sale: PropTypes.number,
-      product_line: PropTypes.string.isRequired,
-      product_cat: PropTypes.number.isRequired,
-      product_colors: PropTypes.number.isRequired,
-      product_name: PropTypes.string.isRequired,
-      image_source: PropTypes.string.isRequired,
-      image_view: PropTypes.string.isRequired,
-      reviews_avg: PropTypes.number.isRequired,
-      reviews_cnt: PropTypes.number.isRequired,
+      id: PropTypes.number.isRequired,
     }),
-  ).isRequired,
+  ),
 };
 
 export default Slider;

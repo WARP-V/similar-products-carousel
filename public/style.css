@@ -173,7 +173,7 @@ li .shoe .text-holder .price.slashed {
 	color: rgb(58, 58, 58);
 }
 
-li .shoe .text-holder .section-1 .view1b i.material-icons {
+li .shoe .text-holder .section-1 .view-1b i.material-icons {
 	width: 10px;
 	height: 10px;
 	font-size: 10px;
@@ -184,7 +184,7 @@ li .shoe .text-holder .section-1 .view1b i.material-icons {
 	top: 1px;
 }
 
-li .shoe .text-holder .section-1 .view1b text {
+li .shoe .text-holder .section-1 .view-1b text {
 	font-family: 'Roboto Condensed';
 	font-size: 9px;
 	font-weight: 100;
@@ -194,19 +194,19 @@ li .shoe .text-holder .section-1 .view1b text {
 	left: 2px;
 }
 
-li .shoe .text-holder .section-1 .view1a {
+li .shoe .text-holder .section-1 .view1-a {
 	display:inline-block;
 }
 
-li .shoe .text-holder .section-1 .view1b {
+li .shoe .text-holder .section-1 .view-1b {
 	display:none;
 }
 
-li .shoe:hover .text-holder .section-1 .view1a {
+li .shoe:hover .text-holder .section-1 .view-1a {
 	display:none;
 }
 
-li .shoe:hover .text-holder .section-1 .view1b {
+li .shoe:hover .text-holder .section-1 .view-1b {
 	display:inline-block;
 }
 

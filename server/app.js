@@ -7,8 +7,8 @@ const app = express();
 app.use(express.static(path.join(__dirname, './../public')));
 app.use(express.static(path.join(__dirname, './../node_modules')));
 
-app.get('/products-similar', (req, res) => {
-  model.Shoe.getOne(req.query.product_sku, (err1, data1) => {
+app.get('/:product_sku/similar', (req, res) => {
+  model.Shoe.getOne(req.params.product_sku, (err1, data1) => {
     if (err1) {
       res.status(500).send(err1.message);
     } else {
