@@ -7,6 +7,7 @@ import Slider from './Slider';
 class App extends React.Component {
   constructor() {
     super();
+    this.viewTrack = $(window).width();
     this.slideTrack = 0;
     this.slideLeft = this.slideLeft.bind(this);
     this.slideRight = this.slideRight.bind(this);
@@ -19,6 +20,20 @@ class App extends React.Component {
 
   componentDidMount() {
     this.requestImgs();
+    $(window).on('resize', this.correctSlideForNarrowView.bind(this) );
+  }
+
+  correctSlideForNarrowView(e) {
+    let currWidth = $(window).width();
+    if (this.viewTrack !== currWidth) {
+      if (this.viewTrack >= 510 && currWidth < 510) {
+        $('#slider').css({transform: `translate(0px, 0px)`});
+      }
+      if (this.viewTrack <= 510 && currWidth > 510) {
+        $('#slider').css({transform: `translate(${this.slideTrack * 100 / 3}%, 0px)`});
+      }
+    }
+    this.viewTrack = currWidth;
   }
 
   requestImgs() {
