@@ -15,5 +15,8 @@ public/bundle.js
 ## jest output ##
 coverage/
 
+##server tests ##
+server/__tests__/
+
 
 
