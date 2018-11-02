@@ -1,9 +1,6 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow, mount } from 'enzyme';
 import App from '../App';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe('App component', () => {
   describe('shallow render constains the expected DOM elements', () => {
@@ -26,9 +23,10 @@ describe('App component', () => {
   });
 
   describe('constructor attaches expected properties and methods', () => {
-    it('should mount with a property slideTrack set to 0', () => {
+    it('should mount with state properties slideTo and slideFrom set to 0', () => {
       const app = shallow(<App />).instance();
-      expect(app.slideTrack).toEqual(0);
+      expect(app.state.slideTo).toEqual(0);
+      expect(app.state.slideFrom).toEqual(0);
     });
 
     it('should mount with methods slideLeft and slideRight', () => {
@@ -44,29 +42,43 @@ describe('App component', () => {
   });
 
   describe('methods attached to instance function correctly', () => {
-    test('slideRight adjusts slideTrack property to +1 at each invocation', () => {
+    test('slideRight adjusts slideTo state property to +100 at each invocation', () => {
       const app = shallow(<App />).instance();
-      expect(app.slideTrack).toEqual(0);
+      expect(app.state.slideTo).toEqual(0);
       app.slideRight();
-      expect(app.slideTrack).toEqual(1);
+      expect(app.state.slideTo).toEqual(100);
       app.slideRight();
-      expect(app.slideTrack).toEqual(2);
+      expect(app.state.slideTo).toEqual(200);
     });
 
-    test('slideLeft adjusts slideTrack property to -1 at each invocation', () => {
+    test('slideLeft adjusts slideTo state property to -100 at each invocation', () => {
       const app = shallow(<App />).instance();
-      expect(app.slideTrack).toEqual(0);
+      expect(app.state.slideTo).toEqual(0);
       app.slideLeft();
-      expect(app.slideTrack).toEqual(-1);
+      expect(app.state.slideTo).toEqual(-100);
       app.slideLeft();
-      expect(app.slideTrack).toEqual(-2);
+      expect(app.state.slideTo).toEqual(-200);
     });
 
-    test('switchShoe adjusts the state variable "product_sku"', () => {
+    test('switchShoe adjusts the state property "productSku"', () => {
       const app = shallow(<App />).instance();
-      expect(app.state.product_sku).not.toEqual('NEWSKU-001');
+      expect(app.state.productSku).not.toEqual('NEWSKU-001');
       app.switchShoe('NEWSKU-001');
-      expect(app.state.product_sku).toEqual('NEWSKU-001');
+      expect(app.state.productSku).toEqual('NEWSKU-001');
+    });
+
+    test('switchShoe fires requestImgs', () => {
+      const app = shallow(<App />).instance();
+      const spy = jest.spyOn(app, 'requestImgs');
+      app.switchShoe('NEWSKU-001');
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    test('requestImgs fires once on ComponentDidMount', () => {
+      const app = mount(<App />).instance();
+      const spy = jest.spyOn(app, 'requestImgs');
+      app.componentDidMount();
+      expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 });

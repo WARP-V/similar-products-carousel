@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Card = props => (
   <div className="shoe">
-    <button type="button" onClick={() => { props.handleClick(props.product.product_sku) }}>
+    <button type="button" onClick={() => { props.handleClick(props.product.product_sku); }}>
       <div className="image-holder">
         <img src={props.product.image_source} alt="" />
       </div>
@@ -21,7 +21,7 @@ const Card = props => (
                     <i className="material-icons">star_rate</i>
                     <i className="material-icons">star_rate</i>
                     <i className="material-icons">star_rate</i>
-                    <text>{`(${props.product.reviews_cnt})`}</text>
+                    <span className="text">{`(${props.product.reviews_cnt})`}</span>
                   </div>
                 )
             }
@@ -48,20 +48,7 @@ const Card = props => (
 
 Card.propTypes = {
   handleClick: PropTypes.func.isRequired,
-  product: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    product_sku: PropTypes.string.isRequired,
-    price_full: PropTypes.number.isRequired,
-    price_sale: PropTypes.number,
-    product_line: PropTypes.string.isRequired,
-    product_cat: PropTypes.number.isRequired,
-    product_colors: PropTypes.number.isRequired,
-    product_name: PropTypes.string.isRequired,
-    image_source: PropTypes.string.isRequired,
-    image_view: PropTypes.string.isRequired,
-    reviews_avg: PropTypes.number.isRequired,
-    reviews_cnt: PropTypes.number.isRequired,
-  }).isRequired,
+  product: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default Card;

@@ -1,75 +1,47 @@
 import React from 'react';
-import $ from 'jquery';
 import axios from 'axios';
 
 import Slider from './Slider';
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.viewTrack = $(window).width();
-    this.slideTrack = 0;
+  constructor(props) {
+    super(props);
     this.slideLeft = this.slideLeft.bind(this);
     this.slideRight = this.slideRight.bind(this);
     this.switchShoe = this.switchShoe.bind(this);
     this.state = {
-      product_sku: '310805-408',
+      productSku: '310805-408',
       products: [],
+      slideFrom: 0,
+      slideTo: 0,
     };
   }
 
   componentDidMount() {
     this.requestImgs();
-    $(window).on('resize', this.correctSlideForNarrowView.bind(this));
-  }
-
-  correctSlideForNarrowView() {
-    const currWidth = $(window).width();
-    if (this.viewTrack !== currWidth) {
-      if (this.viewTrack >= 510 && currWidth < 510) {
-        $('#slider').css({ transform: 'translate(0px, 0px)' });
-      }
-      if (this.viewTrack <= 510 && currWidth > 510) {
-        $('#slider').css({ transform: `translate(${this.slideTrack * 100 / 3}%, 0px)` });
-      }
-    }
-    this.viewTrack = currWidth;
   }
 
   requestImgs() {
-    axios.get(`/${this.state.product_sku}/similar`)
-      .then((res) => {
-        this.setState({
-          products: res.data,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    axios.get(`/${this.state.productSku}/similar`)
+      .then(res => this.setState({ products: res.data }));
   }
 
   slideLeft() {
-    this.slideTrack -= 1;
-    $('#slider').css({ transform: `translate(${this.slideTrack * 100 / 3}%, 0px)` });
-    if (this.slideTrack === -2) $('button.next').addClass('inviz');
-    else $('button.next').removeClass('inviz');
-    if (this.slideTrack === 0) $('button.prev').addClass('inviz');
-    else $('button.prev').removeClass('inviz');
+    this.setState(previous => ({
+      slideFrom: previous.slideTo,
+      slideTo: previous.slideTo - 100,
+    }));
   }
 
   slideRight() {
-    this.slideTrack += 1;
-    $('#slider').css({ transform: `translate(${this.slideTrack * 100 / 3}%, 0px)` });
-    if (this.slideTrack === -2) $('button.next').addClass('inviz');
-    else $('button.next').removeClass('inviz');
-    if (this.slideTrack === 0) $('button.prev').addClass('inviz');
-    else $('button.prev').removeClass('inviz');
+    this.setState(previous => ({
+      slideFrom: previous.slideTo,
+      slideTo: previous.slideTo + 100,
+    }));
   }
 
   switchShoe(sku) {
-    this.setState({
-      product_sku: sku,
-    });
+    this.setState({ productSku: sku });
     this.requestImgs();
   }
 
@@ -78,15 +50,24 @@ class App extends React.Component {
       <div id="carousel">
         <h1>YOU MAY ALSO LIKE</h1>
         <div id="outer-wrapper">
-          <button className="prev inviz" type="button" onClick={this.slideRight}>
+          <button className={this.state.slideTo === 0 ? 'prev inviz' : 'prev'} type="button" onClick={this.slideRight}>
             <i className="material-icons prev">navigate_before</i>
           </button>
-          {
-            this.state.products.length > 0
-              ? <Slider products={this.state.products} handleClick={this.switchShoe} />
-              : <div />
-          }
-          <button className="next" type="button" onClick={this.slideLeft}>
+          <div id="inner-wrapper">
+            {
+              this.state.products.length > 0
+                ? (
+                  <Slider
+                    products={this.state.products}
+                    handleClick={this.switchShoe}
+                    slideFrom={this.state.slideFrom}
+                    slideTo={this.state.slideTo}
+                  />
+                )
+                : <div />
+            }
+          </div>
+          <button className={this.state.slideTo === -200 ? 'next inviz' : 'next'} type="button" onClick={this.slideLeft}>
             <i className="material-icons next">navigate_next</i>
           </button>
         </div>

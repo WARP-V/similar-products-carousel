@@ -1,29 +1,21 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 import Slider from '../Slider';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe('Slider component', () => {
   describe('shallow render constains the expected DOM elements', () => {
-    let props;
-    let sliderInstance;
-    const createSlider = () => {
-      if (!sliderInstance) {
-        sliderInstance = shallow(
-          <Slider {...props} />,
-        );
-      }
-      return sliderInstance;
-    };
+    let p;
+    const createSlider = (products, clicker = () => {}, slideTo, slideFrom) => shallow(
+      <Slider
+        products={products || [p, p, p, p, p, p, p, p, p, p, p, p, p, p]}
+        handleClick={clicker}
+        slideTo={slideTo || 0}
+        slideFrom={slideFrom || 0}
+      />,
+    );
 
-    beforeEach(() => {
-      props = {
-        products: new Array(12),
-        handleClick: () => {},
-      };
-    });
+
+    beforeEach(() => { p = {}; });
 
     it('should render', () => {
       const slider = createSlider();
@@ -32,14 +24,12 @@ describe('Slider component', () => {
 
     it('should have an inner ul element rendered', () => {
       const slider = createSlider();
-      const outerdiv = slider.find('div').first();
-      expect(outerdiv.find('ul').length).toEqual(1);
+      expect(slider.find('ul').length).toEqual(1);
     });
 
     it('should have three li elements rendered within the ul', () => {
       const slider = createSlider();
-      const outerdiv = slider.find('div').first();
-      expect(outerdiv.find('li').length).toEqual(3);
+      expect(slider.find('ul').first().find('li').length).toEqual(3);
     });
   });
 });
