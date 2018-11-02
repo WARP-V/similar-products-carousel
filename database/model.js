@@ -17,7 +17,7 @@ class Shoe {
   }
 
   getImagesOfTwelveSimilar(opts, cb) {
-    const q = 'SELECT * FROM shoes INNER JOIN images ON shoes.product_sku = images.product_sku WHERE shoes.product_line = ? OR shoes.product_cat = ? AND shoes.product_sku != ? LIMIT 12';
+    const q = 'SELECT * FROM shoes INNER JOIN images ON shoes.product_sku = images.product_sku WHERE shoes.product_line = ? OR shoes.product_cat = ? AND shoes.product_sku != ? ORDER BY RAND() LIMIT 12';
     this.connection.query(q, opts, cb);
   }
 }
