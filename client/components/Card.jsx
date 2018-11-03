@@ -21,7 +21,7 @@ const Card = props => (
                     <i className="material-icons">star_rate</i>
                     <i className="material-icons">star_rate</i>
                     <i className="material-icons">star_rate</i>
-                    <span className="text">{`(${props.product.reviews_cnt})`}</span>
+                    <span className="text">{ `(${props.product.reviews_cnt})` }</span>
                   </div>
                 )
             }
