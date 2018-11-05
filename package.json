@@ -3,7 +3,10 @@
   "jest": {
     "verbose": true,
     "collectCoverage": true,
-    "setupTestFrameworkScriptFile": "<rootDir>setupTests.js"
+    "setupTestFrameworkScriptFile": "<rootDir>setupTests.js",
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/client/styles/__mocks__/styles.js"
+    }
   },
   "version": "1.0.0",
   "description": "module for displaying similar products in nike air jordan clone",
