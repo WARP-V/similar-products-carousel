@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import Card from './Card';
 
+require('./../styles/slider.css');
+
 class Slider extends React.Component {
   constructor(props) {
     super(props);
