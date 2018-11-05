@@ -1,0 +1,45 @@
+ul {
+  float: left;
+  transition: transform 350ms;
+  max-height: 285px;
+  width: 2424px;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+li {
+  float: left;
+  max-height: 283px;
+  width: 808px;
+}
+
+@media all and (max-width: 960px) {
+
+  ul {
+    max-height: 570px;
+    width: 1212px;
+  }
+
+  li {
+    max-height: 570px;
+    width: 404px;
+  }
+
+}
+
+@media all and (max-width: 510px) {
+
+  ul {
+    max-height: 374px;
+    width: 3228px;
+    transform: translateX(0px) !important;
+    transition: transform 0s !important;
+  }
+
+  li {
+    max-height: 374px;
+    width: 1076px;  
+  }  
+
+}

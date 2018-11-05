@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+require('./../styles/card.css');
+
 const Card = props => (
   <div className="shoe">
     <button type="button" onClick={() => { props.handleClick(props.product.product_sku); }}>

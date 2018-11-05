@@ -14,13 +14,21 @@ module.exports = {
     rules: [
       {
         test: [/\.js$/, /\.jsx?$/],
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /coverage/],
         loader: 'babel-loader',
         options: {
           presets: ['env', 'react', 'stage-0'],
         },
       },
-    ],
+      {
+        test: [/\.css$/],
+        include: '/client/styles/',
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' }
+        ],
+      },
+    ],  
   },
   externals: {
     'react/addons': true, // important!!

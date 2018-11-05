@@ -1,0 +1,138 @@
+.shoe {
+  float: left;
+  width: 176px;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid transparent;
+  padding: 12px;
+  border-image: initial;
+  cursor: pointer;
+}
+
+.shoe:hover {
+  transition: border 0.5s;
+  border: 1px solid #ddd;
+}
+
+.image-holder {
+  width: 176px;
+  height: 176px;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.image-holder img {
+  height: 100%;
+}
+
+.text-holder {
+  display: block;
+  width: 176px;
+  height: 70px;
+  vertical-align: baseline;
+  text-align: left;
+}
+
+.text-holder .section-1 {
+  height: 18px;
+  margin: 8px 0px 0px 0px;
+  box-shadow: inset 0 -1px 0 0 #ddd;
+}
+
+.text-holder .section-2 {
+  height: 18px;
+  margin: 7px 0px 0px 0px;
+}
+
+.text-holder span {
+  width: 100%;
+  display: inline-block;
+  float: left;
+  color: #525252;
+  font-size: 10px;
+  margin: 0px;
+  padding: 0px 0px 4px 0px;
+  font-family: 'Helvetica Neue';
+}
+
+.text-holder .product {
+  color: rgb(58, 58, 58);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+}
+
+.text-holder .price {
+  width: auto;
+  margin: 0px 3px 0px 0px;
+}
+
+.text-holder .price.slashed {
+  padding: 0px 1px 0px 1px;
+  font-weight: 700;
+  text-decoration: line-through;
+  color: rgb(58, 58, 58);
+}
+
+.text-holder .section-1 .view-1b i.material-icons {
+  width: 10px;
+  height: 10px;
+  font-size: 10px;
+  float: left;
+  display: inline-block;
+  color: rgb(58, 58, 58);
+  position: relative;
+  top: 1px;
+}
+
+.text-holder .section-1 .view-1b .text {
+  font-family: 'Roboto Condensed';
+  font-size: 9px;
+  font-weight: 100;
+  color: #525252;
+  position: relative;
+  top: 1px;
+  left: 2px;
+  width: 40px;
+}
+
+.text-holder .section-1 .view1-a {
+  display:inline-block;
+}
+
+.text-holder .section-1 .view-1b {
+  display:none;
+}
+
+.shoe:hover .text-holder .section-1 .view-1a {
+  display:none;
+}
+
+.shoe:hover .text-holder .section-1 .view-1b {
+  display:inline-block;
+}
+
+@media all and (max-width: 510px) {
+
+  .shoe {
+    width: 267px;
+    padding: 12px 0px;
+  }
+
+  .shoe:hover {
+    transition: none;
+    border: 1px solid transparent;
+  }
+
+  .image-holder {
+    width: 267px;
+    height: 267px;
+  }
+
+  .text-holder {
+    display: block;
+    width: 176px;
+    padding-left: 17px;
+  }
+
+}

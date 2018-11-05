@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import Slider from './Slider';
 
+require('./../styles/app.css');
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -41,7 +43,12 @@ class App extends React.Component {
   }
 
   switchShoe(sku) {
-    this.setState({ productSku: sku });
+    this.setState({
+      productSku: sku,
+      products: [],
+      slideFrom: 0,
+      slideTo: 0,
+    });
     this.requestImgs();
   }
 
@@ -55,8 +62,9 @@ class App extends React.Component {
           </button>
           <div id="inner-wrapper">
             {
-              this.state.products.length > 0
-                ? (
+              this.state.products.length === 0
+                ? <div>Loading...</div>
+                : (
                   <Slider
                     products={this.state.products}
                     handleClick={this.switchShoe}
@@ -64,7 +72,7 @@ class App extends React.Component {
                     slideTo={this.state.slideTo}
                   />
                 )
-                : <div />
+
             }
           </div>
           <button className={this.state.slideTo === -200 ? 'next inviz' : 'next'} type="button" onClick={this.slideLeft}>

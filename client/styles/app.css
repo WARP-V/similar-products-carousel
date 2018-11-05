@@ -1,0 +1,121 @@
+h1 {
+	font-family: 'Roboto Condensed';
+	font-weight: 700;
+	font-size: 14px;
+	text-align: center;
+	margin-bottom: 5px;
+	padding: 0px 20px;
+}
+
+#outer-wrapper {
+	display: block;
+	width: 100%;
+	height: 285px;
+}
+
+#inner-wrapper {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	left: calc(50% - 404px);
+	max-height: 283px;
+	width: 808px;
+}
+
+i.material-icons {
+	color: #525252;
+}
+
+button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+}
+
+button:focus {
+  outline: none;
+}
+
+button.prev {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: calc(50% - 404px - 60px);
+	padding: calc(142px - 30px) 30px calc(142px + 29px) 20px;
+}
+
+button.prev:hover i {
+	color: #d3d3d3;
+}
+
+button.next {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: calc(50% + 404px);
+	padding: calc(142px - 30px) 30px calc(142px + 29px) 20px;
+}
+
+button.next:hover i {
+	color: #d3d3d3;
+}
+
+i.material-icons.prev, i.material-icons.next {
+	font-size: 20px;
+	transition: color 0.5s;
+}
+
+button.inviz {
+	transition: opactity 1s;
+	opacity: 0;
+	pointer-events: none;
+}
+
+@media all and (max-width: 960px) {
+
+	#outer-wrapper {
+		height: 574px;
+	}
+
+	#inner-wrapper {
+		left: calc(50% - 202px);
+		max-height: 570px;
+		width: 404px;
+	}
+
+	button.prev {
+		left: calc(50% - 202px - 60px);
+		padding: calc(284px - 30px) 30px calc(284px + 29px) 20px;
+	}
+
+	button.next {
+		left: calc(50% + 202px);
+		padding: calc(284px - 30px) 30px calc(284px + 29px) 20px;
+	}
+}
+
+@media all and (max-width: 510px) {
+
+	h1 {
+		text-align: left;
+	}
+
+	button.prev, button.next {
+		display: none;
+	}
+
+	#outer-wrapper {
+		height: 374px;
+		max-width: 100vw;
+		overflow-x: auto;
+	}
+
+	#inner-wrapper {
+		left: 8px;
+		max-height: 374px;
+		width: 3228px;
+	}
+	
+}
+
