@@ -43,11 +43,11 @@ class App extends React.Component {
   }
 
   switchShoe(sku) {
-    this.setState({ 
+    this.setState({
       productSku: sku,
       products: [],
-      slideFrom: 0, 
-      slideTo: 0 
+      slideFrom: 0,
+      slideTo: 0,
     });
     this.requestImgs();
   }
@@ -64,13 +64,15 @@ class App extends React.Component {
             {
               this.state.products.length === 0
                 ? <div>Loading...</div>
-                : <Slider
+                : (
+                  <Slider
                     products={this.state.products}
                     handleClick={this.switchShoe}
                     slideFrom={this.state.slideFrom}
                     slideTo={this.state.slideTo}
                   />
-                
+                )
+
             }
           </div>
           <button className={this.state.slideTo === -200 ? 'next inviz' : 'next'} type="button" onClick={this.slideLeft}>

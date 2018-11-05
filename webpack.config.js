@@ -22,7 +22,7 @@ module.exports = {
       },
       {
         test: [/\.css$/],
-        exclude: [/node_modules/, /coverage/],
+        include: '/client/styles/',
         use: ['style-loader','css-loader'],
       },
     ],  
