@@ -22,11 +22,8 @@ module.exports = {
       },
       {
         test: [/\.css$/],
-        include: '/client/styles/',
-        use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader' }
-        ],
+        exclude: [/node_modules/, /coverage/],
+        use: ['style-loader','css-loader'],
       },
     ],  
   },
