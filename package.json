@@ -15,8 +15,9 @@
   "private": true,
   "scripts": {
     "start": "nodemon server/server.js",
-    "build": "webpack -d --watch",
-    "seeds": "node database/seeds.js",
+    "watch": "webpack -d --watch",
+    "build": "webpack -d",
+    "seed": "node database/seed.js",
     "lint": "eslint --ignore-path .gitignore client/components/** database/** --fix",
     "test": "jest --detectOpenHandles"
   },
@@ -44,7 +45,7 @@
     "babel-loader": "7.0.0",
     "babel-plugin-react": "1.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "6.24.1",
     "css-loader": "^1.0.1",

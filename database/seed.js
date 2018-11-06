@@ -3,7 +3,8 @@ const mysql = require('mysql');
 const fs = promise.promisifyAll(require('fs'));
 
 const connection = mysql.createConnection({
-  user: 'root',
+  user: 'warpv',
+  password: 'justdoit',
   database: 'airjordans',
   multipleStatements: true,
 });

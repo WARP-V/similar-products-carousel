@@ -1,5 +1,4 @@
 CREATE DATABASE IF NOT EXISTS airjordans;
-
 USE airjordans;
 
 DROP TABLE IF EXISTS shoes;

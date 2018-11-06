@@ -3,7 +3,8 @@ const mysql = require('mysql');
 class Shoe {
   constructor() {
     this.connection = mysql.createConnection({
-      user: 'root',
+      user: 'warpv',
+      password: 'justdoit',
       database: 'airjordans',
     });
   }
