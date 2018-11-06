@@ -22,27 +22,31 @@ click on a product card to navigate to that item's full product page.
 3.0]   login to mysql using your root account: 
 
         bash$ `mysql -u root (-p your_password)`
-        
+    
 3.1]   create new db user with password: 
 
         mysql> `CREATE USER warpv@localhost IDENTIFIED BY 'justdoit';`
-        
+    
 3.2]   set access to airjordans database: 
 
         mysql> `GRANT ALL PRIVILEGES ON airjordans.* TO warpv@localhost IDENTIFIED BY 'justdoit';`
-        
+    
 3.3]   flush priveleges: 
 
         mysql> `FLUSH PRIVILEGES;`
-        
-3.4]  exit shell:
+    
+3.4]  create first instance of database
+
+       mysql> `CREATE DATABASE IF NOT EXISTS airjordans`
+
+3.5]  exit shell:
 
         mysql> `quit;`
-        
-3.5]  run seeding script:
+
+3.6]  run seeding script:
 
         bash$ `npm run seed`
-        
+
 4] serve application 
 
     $bash `npm run start`
