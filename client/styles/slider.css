@@ -1,4 +1,4 @@
-ul {
+#carousel ul {
   float: left;
   transition: transform 350ms;
   max-height: 285px;
@@ -8,7 +8,7 @@ ul {
   list-style: none;
 }
 
-li {
+#carousel li {
   float: left;
   max-height: 283px;
   width: 808px;
@@ -16,12 +16,12 @@ li {
 
 @media all and (max-width: 960px) {
 
-  ul {
+  #carousel ul {
     max-height: 570px;
     width: 1212px;
   }
 
-  li {
+  #carousel li {
     max-height: 570px;
     width: 404px;
   }
@@ -30,14 +30,14 @@ li {
 
 @media all and (max-width: 510px) {
 
-  ul {
+  #carousel ul {
     max-height: 374px;
     width: 3228px;
     transform: translateX(0px) !important;
     transition: transform 0s !important;
   }
 
-  li {
+  #carousel li {
     max-height: 374px;
     width: 1076px;  
   }  
