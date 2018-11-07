@@ -10,7 +10,7 @@
 #carousel #outer-wrapper {
 	display: block;
 	width: 100%;
-	height: 285px;
+	height: 345px;
 }
 
 #carousel #inner-wrapper {
@@ -75,7 +75,7 @@
 @media all and (max-width: 960px) {
 
 	#carousel #outer-wrapper {
-		height: 574px;
+		height: 634px;
 	}
 
 	#carousel #inner-wrapper {
