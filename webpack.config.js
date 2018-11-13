@@ -1,3 +1,5 @@
+
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -26,10 +28,5 @@ module.exports = {
         use: ['style-loader','css-loader'],
       },
     ],  
-  },
-  externals: {
-    'react/addons': true, // important!!
-    'react/lib/ReactContext': true,
-    'react/lib/ExecutionEnvironment': true,
-  },
+  }
 };
